@@ -1,0 +1,70 @@
+<app-barra-superior [imgUsuario]="usuarioActual?.urlImg" [nombreUsuario]="usuarioActual?.nombre"></app-barra-superior>
+<br>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+    <h3 style="text-align: center">Petición de Transferencia</h3>
+    <br>
+    <div class="row">
+      <div class="col-sm-3">
+        <h5>Usuario</h5>
+        <br>
+        <mat-card>
+          <h5 style="text-align: center" >{{usuario?.nombre}}</h5>
+          <img style="width: 100%; max-width: 250px" src="{{usuario?.urlImg}}" alt="Usuario Foto">
+        </mat-card>
+      </div>
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-6">
+            <h5 style="text-align: center">Autor</h5>
+            <br>
+            <div>
+              <mat-card>
+                <div class="row" *ngFor="let comida of listaComida">
+                  <div class="col-sm-4">
+                    <img src="{{comida.urlImg}}" alt="Usuario Foto" style="width: 100%">
+                  </div>
+                  <div class="col-sm-8">
+                    <h5>{{comida.nombrePlato}}</h5>
+                    <label>{{comida.descripcionPlato}}</label>
+                  </div>
+                </div>
+                <!--button mat-stroked-button color="primary">Visitar</button!-->
+              </mat-card>
+          </div>
+          <div class="col-sm-3"></div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <h5>Libros</h5>
+    <br>
+    <div class="row">
+      <div *ngFor="let ingrediente of listaIngredientes" class="col-sm-3" style="width: 100%">
+        <mat-card>
+          <div class="row">
+            <div class="col-sm-5">
+              <h5>{{ingrediente.nombreIngrediente}}</h5>
+              <label>{{ingrediente.cantidad}}</label>
+            </div>
+            <div class="col-sm-7">
+              <img style="width: 100%" src="{{ingrediente.urlImg}}" alt="Usuario Foto">
+            </div>
+          </div>
+          <br>
+          <button mat-stroked-button color="primary" style="width: 100%">Pedir Transferencia</button>
+        </mat-card>
+        <br>
+      </div>
+    </div>
+    <br>
+    <button mat-raised-button color="primary" style="width: 100%">Cargar más</button>
+    <br>
+    <br>
+  </div>
+  <div class="col-sm-1"></div>
+</div>

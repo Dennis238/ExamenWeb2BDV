@@ -1,0 +1,38 @@
+<br>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+    <h3>Libros</h3>
+    <br>
+    <div class="row">
+      <div *ngFor="let ingrediente of listaAMostrar" class="col-sm-3" style="width: 100%">
+        <mat-card>
+          <div class="row">
+            <div class="col-sm-6">
+              <h5>{{ingrediente.nombreIngrediente}}</h5>
+              <label>Cant: {{ingrediente.cantidad}}</label>
+            </div>
+            <div class="col-sm-6">
+              <img src="{{ingrediente.urlImg}}" alt="Usuario Foto">
+            </div>
+          </div>
+          <button mat-stroked-button color="primary">Pedir Transfrencia</button>
+        </mat-card>
+        <br>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-3">
+        <button mat-raised-button color="primary" (click)="prev()" [disabled]="paginaActual ===1">Anterior</button>
+      </div>
+      <div class="col-sm-6"></div>
+      <div class="col-sm-3">
+        <button mat-raised-button color="primary" style="width: 100%;" (click)="next()" [disabled]="paginaActual===cantidadPaginas">Siguiente</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-1"></div>
+</div>
+<br>
+
